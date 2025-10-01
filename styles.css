@@ -18,7 +18,7 @@ header{
 header nav a{
     color: white;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 30px;
     margin-right: 15px;
     margin-left: 15px;
     margin-right:15px ;
@@ -36,7 +36,8 @@ footer{
     background-color: brown;
     color: white;
     text-align: center;
-    padding: 30px;
+    padding: 15px;
+   
 }
 
 img {
@@ -45,8 +46,8 @@ img {
   max-width: 300px; /* não cresce além disso */
 }
 
-.card{
-    max-width: 900px;       /* largura máxima do card */
+main{
+    max-width: 800px;       /* largura máxima do card */
     margin: 40px auto;      /* centraliza no meio da tela */
     padding: 20px;          /* espaço interno */
     background-color: #fff; /* fundo branco */
@@ -56,24 +57,11 @@ img {
     display: grid;
     grid-template-columns:repeat(3,1fr);
     gap: 20px;
-    padding: 20px;
+
 
 }
 
-main{
-   width: 900px;
-    margin: 40px auto;   /* cria espaço em cima e embaixo, centraliza no meio */
-    background-color: #f4f1de;
-    text-align: center;
-    border-radius: 20px;
-    box-shadow: 7px 6px 13px 0px rgba(0,0,0,0.62);
-    padding: 20px;
-    display: flex;          /* faz os filhos (articles) ficarem lado a lado */
-    justify-content: center; /* centraliza os artigos no main */
-    gap: 20px;              /* espaço entre os artigos */
-    flex-wrap: wrap;        /* quebra para linha de baixo se não couber */
 
-}
 article{
     max-width: 200px;
     padding: 15px;
