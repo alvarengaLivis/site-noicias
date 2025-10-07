@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contato</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="c">
+</head>
+<body>
+  <header>
+        <h1>Portal Séries Favs</h1>
+        <div class="header-mobile">
+            
+        </div>
+    <nav>
+
+       <a href="index.html">inicio</a>
+       <a href="page-filmes.html">filmes</a>
+       <a href="">séries</a>
+       <a href="">lançametos</a>
+       <a href="contato.html">contato</a>
+    </nav>
+    </header>
+    <main>
+        <section class="secao-formulario">
+            <h2>formulari para contato</h2>
+
+            <form
+             action="https://formspree.io/f/mqaylral"
+             method="POST">
+                <div>
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome" id=nome>
+                </div>
+            
+                <div>
+                    <label for="nome">Sobrenome</label>
+                    <input type="text" name="Sobrenome" id=sobrenome>
+                </div>
+
+                <div>
+                    <label for="idade">idade</label>
+                    <input type="number" name="idade" id=idade>
+                </div>
+
+                <div>
+                    <label for="datadenascimento">Data de Nascimento</label>
+                    <input type="date" name="datadenascimento" id=datadenascimento>
+                </div>
+
+                 <div>
+          <h3>Interesses</h3>
+
+          <div>
+            <label for="backend">Backend</label>
+            <input type="checkbox" name="backend" id="backend">
+          </div>
+
+          <div>
+            <label for="frontend">Frontend</label>
+            <input type="checkbox" name="frontend" id="frontend">
+          </div>
+
+          <div>
+            <label for="bancoDeDados">Banco de dados</label>
+            <input type="checkbox" name="bancoDeDados" id="bancoDeDados">
+          </div>
+        </div>
+
+        <div>
+          <h3>Gênero</h3>
+          <div>
+            <label for="masculino">Masculino</label>
+            <input type="radio" name="genero" id="masculino">
+          </div>
+
+          <div>
+            <label for="feminino">Feminino</label>
+            <input type="radio" name="genero" id="feminino">
+          </div>
+
+          <div>
+            <label for="outro">Outro</label>
+            <input type="radio" name="genero" id="outro">
+          </div>
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email">
+        </div>
+        
+        <div>
+          <label for="assunto">Assunto</label>
+          <select name="assunto" id="assunto">
+            <option></option>
+            <option value="reclamações">Reclamações</option>
+            <option value="elogios">Elogios</option>
+            <option value="duvidas">Dúvidas</option>
+            <option value="outros">Outros</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="mensagem">Digite sua mensagem</label>
+          <textarea name="mensagem" id="mensagem"></textarea>
+        </div>
+
+        <button type="submit"></button>
+     </form>
+  </section>
+    <p id="status-formulario-ok"></p>
+    <p id="status-formulario-not-ok"></p>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Portal Séries Favs.
+        Desenvolvido por Livia Alvarenga</p>
+    </footer>  
+</body>
+
+<script>
+  const iconeMenu = document.querySelector('.icone-menu');
+  const menuAtivo = document.querySelector('.menu-mobile');
+  iconeMenu.addEventListener('click', () => {
+    menuAtivo.classList.toggle('menu-ativo');
+  });
+</script>
+
+<script>
+  var form = document.getElementById("meu-formulario");
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    var statusOk = document.getElementById("status-formulario-ok");
+    var statusNotOk = document.getElementById("status-formulario-not-ok");
+
+    var data = new FormData(event.target);
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      statusOk.innerHTML = "Sucesso! Obrigado por enviar!";
+      form.reset()
+    }).catch(error => {
+      statusNotOk.innerHTML = "Ops! Houve um erro ao enviar seu formulario. Revise as informacoes e envie novamente"
+    });
+  }
+  form.addEventListener("submit", handleSubmit)
+</script>
+</html>
